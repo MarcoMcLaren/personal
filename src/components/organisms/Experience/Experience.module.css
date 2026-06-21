@@ -1,0 +1,8 @@
+.timeline {
+  margin-top: var(--space-4);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}

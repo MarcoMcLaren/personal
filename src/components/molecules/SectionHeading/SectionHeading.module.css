@@ -1,0 +1,47 @@
+.reveal {
+  margin-bottom: var(--space-12);
+}
+
+.centerReveal {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 760px;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-cyan-bright);
+}
+
+.eyebrow svg {
+  color: var(--color-pink-glow);
+}
+
+.title {
+  font-size: var(--fs-h2);
+  color: var(--color-star);
+}
+
+.intro {
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  max-width: 60ch;
+}

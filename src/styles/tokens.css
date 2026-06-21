@@ -1,0 +1,84 @@
+/* ============================================================
+   Design Tokens — Galaxy Theme
+   Single source of truth for color, type, spacing, motion.
+   ============================================================ */
+:root {
+  /* ---- Deep space backgrounds ---- */
+  --color-void: #05010f;
+  --color-space: #0a0420;
+  --color-space-2: #120630;
+  --color-surface: rgba(124, 58, 237, 0.06);
+  --color-surface-strong: rgba(124, 58, 237, 0.1);
+
+  /* ---- Nebula / cosmic accents ---- */
+  --color-nebula: #7c3aed;
+  --color-nebula-bright: #a855f7;
+  --color-violet-glow: #c4b5fd;
+  --color-cyan: #22d3ee;
+  --color-cyan-bright: #67e8f9;
+  --color-magenta: #ec4899;
+  --color-pink-glow: #f0abfc;
+  --color-gold: #fbbf24;
+  /* A warm nod to where this CV is headed */
+  --color-ember: #d97757;
+
+  /* ---- Text ---- */
+  --color-star: #f8fafc;
+  --color-text: #e7e3ff;
+  --color-text-muted: #a8a0d8;
+  --color-text-dim: #6f6a9a;
+
+  /* ---- Gradients ---- */
+  --grad-cosmic: linear-gradient(135deg, #a855f7 0%, #22d3ee 100%);
+  --grad-aurora: linear-gradient(120deg, #f0abfc 0%, #a855f7 40%, #22d3ee 100%);
+  --grad-ember: linear-gradient(120deg, #f0abfc 0%, #d97757 100%);
+
+  /* ---- Typography ---- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 9vw, 7rem);
+  --fs-h1: clamp(2rem, 6vw, 3.75rem);
+  --fs-h2: clamp(1.6rem, 4.5vw, 2.75rem);
+  --fs-h3: clamp(1.2rem, 3vw, 1.6rem);
+  --fs-body: clamp(1rem, 2.2vw, 1.125rem);
+  --fs-small: 0.875rem;
+  --fs-tiny: 0.75rem;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ---- Layout ---- */
+  --max-content: 1180px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* ---- Radii ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* ---- Shadows / glows ---- */
+  --glow-violet: 0 0 40px rgba(168, 85, 247, 0.45);
+  --glow-cyan: 0 0 40px rgba(34, 211, 238, 0.4);
+  --shadow-card: 0 18px 50px -20px rgba(0, 0, 0, 0.8);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Z-index scale ---- */
+  --z-bg: 0;
+  --z-content: 1;
+  --z-nav: 40;
+  --z-cursor: 60;
+}

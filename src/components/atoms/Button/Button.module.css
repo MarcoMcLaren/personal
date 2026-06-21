@@ -1,0 +1,64 @@
+.button {
+  --btn-bg: var(--grad-cosmic);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.85em 1.6em;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-pill);
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.3s var(--ease-out),
+    color 0.25s ease;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* ---- Primary: filled cosmic gradient with glow ---- */
+.primary {
+  color: #0a0420;
+  background: var(--grad-cosmic);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 10px 30px -10px rgba(168, 85, 247, 0.7);
+}
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), var(--glow-violet),
+    0 16px 40px -12px rgba(34, 211, 238, 0.6);
+}
+
+/* ---- Ghost: glass outline ---- */
+.ghost {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  backdrop-filter: blur(8px);
+}
+.ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-cyan-bright);
+  color: var(--color-star);
+  box-shadow: var(--glow-cyan);
+}
+
+/* ---- Ember: nod to the destination ---- */
+.ember {
+  color: #1a0d08;
+  background: var(--grad-ember);
+  box-shadow: 0 10px 30px -10px rgba(217, 119, 87, 0.7);
+}
+.ember:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(217, 119, 87, 0.5), 0 16px 40px -12px rgba(240, 171, 252, 0.6);
+}
+
+.full {
+  width: 100%;
+}

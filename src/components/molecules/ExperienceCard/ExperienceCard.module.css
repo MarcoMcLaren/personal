@@ -1,0 +1,107 @@
+.item {
+  position: relative;
+  padding-left: clamp(1.75rem, 5vw, 2.75rem);
+  padding-bottom: var(--space-8);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* The vertical timeline spine, running between the nodes */
+.item::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 1.9rem;
+  bottom: -0.5rem;
+  width: 2px;
+  background: linear-gradient(
+    var(--color-nebula-bright),
+    rgba(34, 211, 238, 0.4),
+    transparent
+  );
+}
+
+.item:last-child::before {
+  display: none;
+}
+
+/* The node on the spine, aligned with the role title */
+.node {
+  position: absolute;
+  left: 0;
+  top: 1.55rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--grad-cosmic);
+  box-shadow: 0 0 0 4px rgba(5, 1, 15, 0.6), 0 0 16px var(--color-nebula-bright);
+  z-index: 2;
+}
+
+.card {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-1);
+}
+
+.role {
+  font-size: var(--fs-h3);
+  color: var(--color-star);
+}
+
+.period {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-cyan-bright);
+  white-space: nowrap;
+}
+
+.company {
+  color: var(--color-violet-glow);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.context {
+  color: var(--color-text-dim);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-4);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.highlight {
+  display: flex;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.highlight svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--color-pink-glow);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}

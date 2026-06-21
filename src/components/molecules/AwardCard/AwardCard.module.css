@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  gap: var(--space-4);
+  height: 100%;
+}
+
+.iconWrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  color: var(--color-gold);
+  background: radial-gradient(circle at 30% 30%, rgba(251, 191, 36, 0.25), rgba(251, 191, 36, 0.05));
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  box-shadow: 0 0 22px -6px rgba(251, 191, 36, 0.5);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.year {
+  font-family: var(--font-display);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-star);
+  line-height: 1.2;
+}
+
+.detail {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+}

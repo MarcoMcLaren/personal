@@ -1,0 +1,55 @@
+.panel {
+  position: relative;
+  background: linear-gradient(
+    160deg,
+    rgba(124, 58, 237, 0.1),
+    rgba(10, 4, 32, 0.55)
+  );
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: border-color 0.4s var(--ease-out), transform 0.4s var(--ease-out),
+    box-shadow 0.4s var(--ease-out);
+}
+
+/* Aurora hairline along the top edge */
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--grad-aurora);
+  opacity: 0.6;
+}
+
+.padded {
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.interactive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: var(--shadow-card), 0 0 40px -16px rgba(168, 85, 247, 0.7);
+}
+
+/* Soft glow that follows nothing but breathes on hover */
+.glow::after {
+  content: '';
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(168, 85, 247, 0.25),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.glow:hover::after {
+  opacity: 1;
+}
