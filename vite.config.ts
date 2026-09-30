@@ -4,9 +4,9 @@ import path from 'node:path';
 
 // https://vitejs.dev/config/
 // Project is served from https://<user>.github.io/personal/ on GitHub Pages,
-// so the production build uses a sub-path base while dev stays at root.
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/personal/' : '/',
+// Production builds and previews share the sub-path; development stays at root.
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === 'build' || isPreview ? '/personal/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -19,8 +19,11 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
+          // Keep shared React code out of the lazy WebGL chunks so Three.js
+          // does not become a dependency of the initial page bundle.
+          vendor: ['react', 'react-dom', 'framer-motion'],
           three: ['three'],
-          r3f: ['@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
+          r3f: ['@react-three/fiber', '@react-three/postprocessing'],
         },
       },
     },

@@ -1,0 +1,21 @@
+.backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(130deg, #05050f, #08091b 60%, #060813); }
+.halo { position: absolute; inset: 0; background: radial-gradient(ellipse 38% 55% at 85% 48%, rgba(91, 66, 168, 0.13), transparent 75%), radial-gradient(ellipse 30% 40% at 75% 63%, rgba(38, 135, 161, 0.07), transparent 75%); }
+.journey { position: fixed; bottom: 1.5rem; left: var(--gutter); z-index: 3; display: flex; flex-direction: column; gap: 0.35rem; width: 190px; pointer-events: none; font-family: var(--font-display); padding: 0.65rem 0.8rem; border-radius: 8px; background: rgba(5, 5, 15, 0.7); backdrop-filter: blur(12px); }
+.journeyTitle { font-size: 0.57rem; text-transform: uppercase; letter-spacing: 0.2em; color: #8d90ac; }
+.chapter { font-size: 0.66rem; color: #747b97; letter-spacing: 0.08em; }
+.number { color: #a6dce6; }
+.chapterName { color: #c0c3da; margin-left: 0.8rem; }
+.progress { height: 1px; margin-top: 0.25rem; background: rgba(157, 173, 220, 0.16); }
+.progressFill { height: 100%; width: 100%; background: linear-gradient(90deg, #a78bfa, #67e8f9); transform: scaleX(0); transform-origin: left; }
+.controls { position: fixed; right: var(--gutter); bottom: 1.5rem; z-index: 3; display: flex; align-items: center; gap: 1.25rem; font-family: var(--font-display); font-size: 0.65rem; color: #adb6d2; }
+.shape { display: flex; align-items: center; gap: 0.5rem; letter-spacing: 0.06em; text-shadow: 0 1px 5px #05050f; }
+.shapeIcon { font-size: 1.15rem; color: #88d2dd; }
+.pause { display: flex; align-items: center; gap: 0.6rem; padding: 0.65rem 0.9rem; border: 1px solid rgba(148, 169, 219, 0.22); border-radius: var(--radius-pill); background: rgba(9, 11, 27, 0.75); backdrop-filter: blur(12px); transition: border-color 0.2s; }
+.pause:hover { border-color: #88d2dd; }
+.feedback { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.5rem 0.8rem; border-radius: 8px; background: rgba(5, 5, 15, 0.8); backdrop-filter: blur(10px); }
+.status { color: #aee9ef; font-size: 0.67rem; letter-spacing: 0.04em; }
+.hint { color: #9da5bd; font-size: 0.58rem; }
+@media (max-width: 1000px) { .shape { display: none; } }
+@media (max-height: 800px) { .journey { display: none; } }
+@media (max-width: 768px) { .journey { display: none; } .controls { right: 1rem; bottom: 0.75rem; } .pause { font-size: 0.6rem; padding: 0.55rem 0.75rem; } }
+@media (max-width: 768px) { .controls { gap: 0.35rem; } .feedback { padding: 0.35rem 0.5rem; } .status { font-size: 0.56rem; } .hint { display: none; } }

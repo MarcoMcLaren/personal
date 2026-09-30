@@ -26,6 +26,7 @@ export function Hero() {
   return (
     <section className={`${styles.hero} section-shell`} id="top">
       <motion.div
+        data-mesh-ui
         className={styles.content}
         variants={container}
         initial="hidden"

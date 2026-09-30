@@ -28,7 +28,7 @@ export function GlassPanel({
     .join(' ');
 
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} data-mesh-ui {...rest}>
       {children}
     </div>
   );

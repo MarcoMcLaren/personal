@@ -3,17 +3,14 @@
   z-index: var(--z-content);
 }
 
-/* Soft scrim so text stays readable over the brightest parts of the galaxy */
+/* Shade the reading column while leaving the sculpture's edges clear. */
 .scrim {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 120% 80% at 50% 40%,
-    transparent 30%,
-    rgba(5, 1, 15, 0.55) 100%
-  );
+  background: linear-gradient(90deg, rgba(5, 5, 15, 0.12), transparent 65%),
+    linear-gradient(0deg, rgba(5, 5, 15, 0.45), transparent 12%, transparent 88%, rgba(5, 5, 15, 0.3));
 }
 
 .skipLink {

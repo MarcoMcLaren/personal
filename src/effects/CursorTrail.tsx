@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useHasFinePointer } from '@/hooks/useMediaQuery';
+import { useHasFinePointer, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface Spark {
   x: number;
@@ -28,9 +28,10 @@ const PALETTE = [280, 265, 300, 190, 320]; // violet / cyan / magenta hues
 export function CursorTrail() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const hasFinePointer = useHasFinePointer();
+  const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (!hasFinePointer) return;
+    if (!hasFinePointer || reducedMotion) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: true });
@@ -139,6 +140,10 @@ export function CursorTrail() {
       }
 
       // ---- Comet trail (additive glow) ----
+      for (let i = trail.length - 1; i >= 0; i--) {
+        trail[i].age++;
+        if (trail[i].age > 22) trail.splice(i, 1);
+      }
       ctx.globalCompositeOperation = 'lighter';
       for (let i = 1; i < trail.length; i++) {
         const p0 = trail[i - 1];
@@ -198,9 +203,9 @@ export function CursorTrail() {
       window.removeEventListener('resize', resize);
       document.body.classList.remove('cursor-trail-active');
     };
-  }, [hasFinePointer]);
+  }, [hasFinePointer, reducedMotion]);
 
-  if (!hasFinePointer) return null;
+  if (!hasFinePointer || reducedMotion) return null;
 
   return (
     <canvas

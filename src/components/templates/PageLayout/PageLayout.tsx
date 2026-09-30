@@ -14,7 +14,7 @@ interface PageLayoutProps {
 }
 
 /**
- * The page chrome: cosmic background canvas, readability scrim, cursor comet,
+ * The page chrome: scroll-driven mesh sculpture, readability scrim, cursor comet,
  * navigation and footer. Pages drop their organisms into the <main> slot.
  */
 export function PageLayout({ children }: PageLayoutProps) {

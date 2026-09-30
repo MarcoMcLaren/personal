@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 
 /**
@@ -6,7 +6,7 @@ import * as THREE from 'three';
  * round glowing stars instead of hard squares — no external asset needed.
  */
 export function useStarTexture(): THREE.Texture {
-  return useMemo(() => {
+  const texture = useMemo(() => {
     const size = 64;
     const canvas = document.createElement('canvas');
     canvas.width = size;
@@ -31,4 +31,6 @@ export function useStarTexture(): THREE.Texture {
     texture.needsUpdate = true;
     return texture;
   }, []);
+  useEffect(() => () => texture.dispose(), [texture]);
+  return texture;
 }
